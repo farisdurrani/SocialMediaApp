@@ -1,27 +1,44 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { registerUser, signIn, logOut } from "../firebase";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-const Login = (props) => {
+const Login = () => {
   // if logged in, go to Board
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [currentUser, setCurrentUser] = useState();
 
-  console.log(email)
+  const auth = getAuth();
 
-  const handleOnSubmit = () => {};
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(`User ${user.email} is logged in`);
+        setCurrentUser(currentUser);
+      }
+    });
+  }, []);
+
+  const handleSignIn = () => {
+    signIn(email, password);
+  };
+
+  const handleRegister = () => {
+    registerUser(email, password);
+  };
 
   return (
     <div id="login">
-      <Form onSubmit={handleOnSubmit}>
+      <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
             placeholder="Enter email"
-            onBlur={e => setEmail(e.target.value)}
+            onBlur={(e) => setEmail(e.target.value)}
           />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
@@ -33,17 +50,19 @@ const Login = (props) => {
           <Form.Control
             type="password"
             placeholder="Password"
-            onBlur={e => setPassword(e.target.value)}
+            onBlur={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button variant="primary" onClick={handleRegister}>
+          Register
+        </Button>
+        <br />
+        <Button variant="primary" onClick={handleSignIn}>
+          Log In
         </Button>
       </Form>
     </div>
   );
 };
-
-Login.propTypes = {};
 
 export default Login;
