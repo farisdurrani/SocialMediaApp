@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.login-box {
+  max-width: 600px;
+  max-height: 800px;
+  border: 5px solid #282c34;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +41,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font-family: "Regular";
+}
+
+@font-face {
+  font-family: "Regular";
+  src: local("MuseoModerno_Bold"),
+    url("./assets/fonts/MuseoModerno_Bold.ttf") format("truetype");
 }

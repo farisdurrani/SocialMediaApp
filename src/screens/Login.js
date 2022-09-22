@@ -35,36 +35,50 @@ const Login = () => {
   }
 
   return (
-    <div id="login">
-      <Form>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control
-            type="email"
-            placeholder="Enter email"
-            onBlur={(e) => setEmail(e.target.value)}
-          />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
-        </Form.Group>
+    <div class="container">
+      <h1>Social Circle</h1>
+      <br />
+      <div class="row">
+        <div class="col"></div>
+        <div class="col login-box d-flex justify-content-center align-items-center">
+          <div id="login">
+            <br />
+            <Form>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  onBlur={(e) => setEmail(e.target.value)}
+                />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onBlur={(e) => setPassword(e.target.value)}
-          />
-        </Form.Group>
-        <Button variant="primary" onClick={handleRegister}>
-          Register
-        </Button>
-        <br />
-        <Button variant="primary" onClick={handleSignIn}>
-          Log In
-        </Button>
-      </Form>
+              <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  onBlur={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+              <br />
+              <Button variant="primary" onClick={handleSignIn}>
+                Log In
+              </Button>
+              <br />
+              <br />
+              <Button variant="primary" onClick={handleRegister}>
+                Register
+              </Button>
+            </Form>
+            <br />
+          </div>
+        </div>
+        <div class="col"></div>
+      </div>
     </div>
   );
 };
