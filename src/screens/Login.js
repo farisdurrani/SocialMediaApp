@@ -5,8 +5,6 @@ import { registerUser, signIn, logOut } from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Login = () => {
-  // if logged in, go to Board
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [currentUser, setCurrentUser] = useState();
@@ -18,6 +16,7 @@ const Login = () => {
       if (user) {
         console.log(`User ${user.email} is logged in`);
         setCurrentUser(currentUser);
+        window.location.replace("/board");
       }
     });
   }, []);
