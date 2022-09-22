@@ -36,8 +36,9 @@ const Login = () => {
 
   return (
     <div class="container">
-      <h1>Social Circle</h1>
-      <br />
+      <div class="row">
+        <h1>Social Circle</h1>
+      </div>
       <div class="row">
         <div class="col"></div>
         <div class="col login-box d-flex justify-content-center align-items-center">
@@ -51,7 +52,7 @@ const Login = () => {
                   placeholder="Enter email"
                   onBlur={(e) => setEmail(e.target.value)}
                 />
-                <Form.Text className="text-muted">
+                <Form.Text className="text">
                   We'll never share your email with anyone else.
                 </Form.Text>
               </Form.Group>
@@ -65,12 +66,12 @@ const Login = () => {
                 />
               </Form.Group>
               <br />
-              <Button variant="primary" onClick={handleSignIn}>
+              <Button variant="outline-light" onClick={handleSignIn}>
                 Log In
               </Button>
               <br />
               <br />
-              <Button variant="primary" onClick={handleRegister}>
+              <Button variant="outline-light" onClick={handleRegister}>
                 Register
               </Button>
             </Form>

@@ -31,7 +31,7 @@
 .login-box {
   max-width: 600px;
   max-height: 800px;
-  border: 5px solid #282c34;
+  border: 5px solid #FFFF33;
 }
 
 @keyframes App-logo-spin {
@@ -45,10 +45,25 @@
 
 h1 {
   font-family: "Regular";
+  color: #FFFF33;
 }
 
 @font-face {
   font-family: "Regular";
   src: local("MuseoModerno_Bold"),
     url("./assets/fonts/MuseoModerno_Bold.ttf") format("truetype");
+}
+
+body {
+  background-color: #333366;
+}
+
+Form{
+  font-family: "Regular";
+  color:#FFFF33;
+}
+
+.text {
+  font-family: "Regular";
+  color:#FFFF33;
 }

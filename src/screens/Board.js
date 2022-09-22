@@ -24,8 +24,8 @@ const Board = (props) => {
 
   return (
     <div>
-      Board
-      <Button variant="primary" onClick={handleLogOut}>
+      <h1>Board  </h1>
+      <Button variant="outline-light" onClick={handleLogOut}>
         Log out
       </Button>
     </div>
