@@ -23,11 +23,16 @@ const Login = () => {
 
   const handleSignIn = () => {
     signIn(email, password);
+    window.location.replace("/board");
   };
 
   const handleRegister = () => {
     registerUser(email, password);
   };
+
+  if (currentUser) {
+    return <>Loading...</>;
+  }
 
   return (
     <div id="login">

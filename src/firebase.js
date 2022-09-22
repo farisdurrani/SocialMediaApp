@@ -30,7 +30,7 @@ const auth = getAuth();
 export const registerUser = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log(`Registered with user ${userCredential.user.email}`);
+      alert(`Registered with user ${userCredential.user.email}`);
     })
     .catch((error) => {
       alert(error.code);
@@ -40,7 +40,7 @@ export const registerUser = (email, password) => {
 export const signIn = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log(`Logged in with user ${userCredential.user.email}`);
+      alert(`Logged in with user ${userCredential.user.email}`);
     })
     .catch((error) => {
       alert(error.code);
@@ -50,7 +50,7 @@ export const signIn = (email, password) => {
 export const logOut = () => {
   signOut(auth)
     .then(() => {
-      console.log("Signed out");
+      alert("Signed out");
     })
     .catch((error) => {
       alert(error.code);
