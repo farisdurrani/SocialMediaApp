@@ -1,1 +1,1 @@
-export { default as ResponseBox } from "./ResponseBox";
+export { default as SocialMediaPost } from "./SocialMediaPost";

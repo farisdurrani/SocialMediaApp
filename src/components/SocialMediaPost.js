@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const SocialMediaPost = props => {
     return (
         <div>
-            
+            My post
         </div>
     );
 };
