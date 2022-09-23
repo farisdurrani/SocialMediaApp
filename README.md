@@ -20,6 +20,18 @@ npm run
 Frontend - ReactJS </br>
 Backend - NodeJS, Firebase Authentication </br>
 Database - Firebase NoSQL Firestore Database
+
+# Screenshots
+
+Login page
+![](.github/readme_assets/login.jpg)
+
+Social Board page
+![](.github/readme_assets/board_main.jpg)
+
+Social Board page (2)
+![](.github/readme_assets/board_input.jpg)
+
 # License
 
 FormAndViz is MIT licensed, as found in the [LICENSE](./LICENSE) file.
