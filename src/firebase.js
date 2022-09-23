@@ -45,7 +45,7 @@ export const registerUser = (email, password) => {
     });
 };
 
-export const signIn = async(email, password) => {
+export const signIn = async (email, password) => {
   await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       alert(`Logged in with user ${userCredential.user.email}`);
@@ -79,11 +79,7 @@ export const addToResponses = async (data) => {
 };
 
 export const getAllResponses = async () => {
-  const q = query(
-    collection(db, POSTS_COLLECTION_NAME),
-    orderBy("createdAt"),
-    limit(11)
-  );
+  const q = query(collection(db, POSTS_COLLECTION_NAME), orderBy("createdAt"));
   const querySnapshot = await getDocs(q);
   const queryResponse = [];
   querySnapshot.forEach((doc) => {
