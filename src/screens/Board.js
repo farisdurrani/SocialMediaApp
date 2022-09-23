@@ -9,6 +9,7 @@ import {
 import Button from "react-bootstrap/Button";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import Form from "react-bootstrap/Form";
+import logo from "../assets/images/High_Resolution_Logo.png";
 
 const Board = () => {
   const [allPosts, setAllPosts] = useState([]);
@@ -54,13 +55,27 @@ const Board = () => {
 
   return (
     <div id="board" className="mb-5">
-      <div>
-        <h1>Board </h1>
-        <Button variant="outline-light" onClick={handleLogOut}>
-          Log out
-        </Button>
+        <div className="row">
+        <div className="text-center">
+          <img
+            src={logo}
+            className="img-fluid"
+            width="30%"
+            height="auto"
+            alt="Social Circle Logo"
+          ></img>
+        </div>
+      </div> 
+      <div className="row justify-content-end">
+        <div className="col">
+          <p className="hide-older-posts">Older posts are hidden</p>
+        </div>
+        <div className="col-3">
+          <Button variant="outline-light" onClick={handleLogOut}>
+            Log out
+          </Button>
+        </div>
       </div>
-      <p className="hide-older-posts">Older posts are hidden</p>
       {allPosts.map((e, i) => (
         <SocialMediaPost key={i} postData={e} />
       ))}
