@@ -54,7 +54,7 @@ const Board = () => {
   }
 
   return (
-    <div id="board">
+    <div id="board" className="mb-5">
         <div className="row">
         <div className="text-center">
           <img
