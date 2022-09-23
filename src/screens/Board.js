@@ -14,7 +14,6 @@ const Board = () => {
   const [allPosts, setAllPosts] = useState([]);
   const [post, setPost] = useState();
   const [userEmail, setUserEmail] = useState();
-  const auth = getAuth();
   const handleLogOut = () => {
     logOut();
     window.location.replace("/login");
@@ -31,6 +30,7 @@ const Board = () => {
   };
 
   useEffect(() => {
+    const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (!user) {
         window.location.replace("/login");

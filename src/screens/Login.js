@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import { registerUser, signIn, logOut } from "../firebase";
+import { registerUser, signIn } from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import logo from "../assets/images/High_Resolution_Logo.png";
 
@@ -11,9 +11,8 @@ const Login = () => {
   const [password, setPassword] = useState();
   const [currentUser, setCurrentUser] = useState();
 
-  const auth = getAuth();
-
   useEffect(() => {
+    const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log(`User ${user.email} is logged in`);
