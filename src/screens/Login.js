@@ -3,6 +3,7 @@ import { Form } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { registerUser, signIn, logOut } from "../firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import logo from "../assets/images/High_Resolution_Logo.png";
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -37,7 +38,9 @@ const Login = () => {
   return (
     <div class="container">
       <div class="row">
-        <h1>Social Circle</h1>
+        <div class="text-center">
+          <img src={logo} class="img-fluid" width="20%" height="auto" alt="Social Circle Logo"></img>
+        </div>
       </div>
       <div class="row">
         <div class="col"></div>
