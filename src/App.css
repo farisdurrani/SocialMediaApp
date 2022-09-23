@@ -25,13 +25,13 @@
 }
 
 #login {
-  text-align: center
+  text-align: center;
 }
 
 .login-box {
   max-width: 600px;
   margin-inline: auto;
-  border: 5px solid #FFFF33;
+  border: 5px solid #ffff33;
 }
 
 @keyframes App-logo-spin {
@@ -45,7 +45,7 @@
 
 h1 {
   font-family: "Regular";
-  color: #FFFF33;
+  color: #ffff33;
 }
 
 @font-face {
@@ -58,17 +58,15 @@ body {
   background-color: #333366;
 }
 
-Form{
+Form {
   font-family: "Regular";
-  color:#FFFF33;
+  color: #ffff33;
 }
 
 .text {
   font-family: "Regular";
-  color:#FFFF33;
+  color: #ffff33;
 }
-
-
 
 /* Board */
 
@@ -77,6 +75,10 @@ Form{
   margin-inline: auto;
 }
 
-#board .post-container {
+#board .post-text {
   background-color: white;
+}
+
+#board .hide-older-posts {
+  color: lightgrey;
 }

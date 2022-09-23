@@ -1,14 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  serverTimestamp,
+  query,
+  orderBy,
+  limit,
+} from "firebase/firestore";
+import { POSTS_COLLECTION_NAME } from "./constants";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -24,8 +32,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const db = getFirestore(app);
 
 export const registerUser = (email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
@@ -55,4 +63,31 @@ export const logOut = () => {
     .catch((error) => {
       alert(error.code);
     });
+};
+
+export const getCurrentTimestamp = () => {
+  return serverTimestamp();
+};
+
+export const addToResponses = async (data) => {
+  try {
+    const docRef = await addDoc(collection(db, POSTS_COLLECTION_NAME), data);
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+};
+
+export const getAllResponses = async () => {
+  const q = query(
+    collection(db, POSTS_COLLECTION_NAME),
+    orderBy("createdAt"),
+    limit(11)
+  );
+  const querySnapshot = await getDocs(q);
+  const queryResponse = [];
+  querySnapshot.forEach((doc) => {
+    queryResponse.push(doc.data());
+  });
+  return queryResponse;
 };

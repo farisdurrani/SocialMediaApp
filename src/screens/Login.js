@@ -38,19 +38,19 @@ const Login = () => {
 
   return (
     <Container id="login">
-      <div class="row">
-        <div class="text-center">
+      <div className="row">
+        <div className="text-center">
           <img
             src={logo}
-            class="img-fluid"
+            className="img-fluid"
             width="20%"
             height="auto"
             alt="Social Circle Logo"
           ></img>
         </div>
       </div>
-      <div class="row">
-        <div class="col login-box d-flex justify-content-center align-items-center">
+      <div className="row">
+        <div className="col login-box d-flex justify-content-center align-items-center">
           <Form className="mt-5 mb-5" id="login-info">
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
