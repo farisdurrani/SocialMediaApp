@@ -23,8 +23,8 @@ const Login = () => {
     });
   }, []);
 
-  const handleSignIn = () => {
-    signIn(email, password);
+  const handleSignIn = async() => {
+    await signIn(email, password);
     window.location.replace("/board");
   };
 
