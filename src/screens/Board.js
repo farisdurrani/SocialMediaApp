@@ -4,6 +4,9 @@ import { SocialMediaPost } from "../components/index";
 import { logOut } from "../firebase";
 import Button from "react-bootstrap/Button";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 const Board = (props) => {
   const handleLogOut = () => {
@@ -16,18 +19,22 @@ const Board = (props) => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) {
-        console.log(`No user detected, Redirect to login`);
         window.location.replace("/login");
       }
     });
   }, []);
 
   return (
-    <div>
-      <h1>Board  </h1>
-      <Button variant="outline-light" onClick={handleLogOut}>
-        Log out
-      </Button>
+    <div id="board">
+      <div>
+        <h1>Board </h1>
+        <Button variant="outline-light" onClick={handleLogOut}>
+          Log out
+        </Button>
+      </div>
+      <SocialMediaPost />
+      <SocialMediaPost />
+      <SocialMediaPost />
     </div>
   );
 };

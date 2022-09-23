@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,9 +24,13 @@
   color: #61dafb;
 }
 
+#login {
+  text-align: center
+}
+
 .login-box {
   max-width: 600px;
-  max-height: 800px;
+  margin-inline: auto;
   border: 5px solid #FFFF33;
 }
 
@@ -66,4 +66,17 @@ Form{
 .text {
   font-family: "Regular";
   color:#FFFF33;
+}
+
+
+
+/* Board */
+
+#board {
+  width: 600px;
+  margin-inline: auto;
+}
+
+#board .post-container {
+  background-color: white;
 }
