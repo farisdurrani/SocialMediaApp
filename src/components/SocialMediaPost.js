@@ -5,7 +5,6 @@ import Form from "react-bootstrap/Form";
 const SocialMediaPost = (props) => {
   return (
     <div className="post-container mt-3 mb-3">
-      <Form.Label />
       <div className="post-text">
         <p>My paragraph</p>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { SocialMediaPost } from "../components/index";
 import { logOut } from "../firebase";
@@ -9,12 +9,12 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 const Board = (props) => {
+  const [post, setPost] = useState();
+  const auth = getAuth();
   const handleLogOut = () => {
     logOut();
     window.location.replace("/login");
   };
-
-  const auth = getAuth();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -35,6 +35,16 @@ const Board = (props) => {
       <SocialMediaPost />
       <SocialMediaPost />
       <SocialMediaPost />
+      <Form>
+        <Form.Group className="mb-3 post-input">
+          <Form.Control
+            placeholder="What are you thinking about today?"
+            as="textarea"
+            rows={3}
+          />
+        </Form.Group>
+        <Button>Send</Button>
+      </Form>
     </div>
   );
 };
