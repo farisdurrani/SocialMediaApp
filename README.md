@@ -2,7 +2,7 @@
 
 A simple social media app where users can login and post status texts like Twitter.
 
-> Authors: Faris Durrani (@farisdurrani) and Nico Ruiz (@MrSyn88)
+> **Authors**: Faris Durrani (@farisdurrani) and Nico Ruiz (@MrSyn88)
 
 Deployed site: https://social-circle.netlify.app
 
@@ -34,6 +34,6 @@ Social Board page (2)
 
 # License
 
-FormAndViz is MIT licensed, as found in the [LICENSE](./LICENSE) file.
+SocialMediaApp is MIT licensed, as found in the [LICENSE](./LICENSE) file.
 
-FormAndViz documentation is Creative Commons licensed, as found in the [LICENSE-docs](./.github/LICENSE-docs) file.
+SocialMediaApp documentation is Creative Commons licensed, as found in the [LICENSE-docs](./.github/LICENSE-docs) file.
