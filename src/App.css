@@ -76,7 +76,8 @@ Form {
 }
 
 #board .post-text {
-  background-color: white;
+  background-color: lightskyblue;
+  padding: 8px;
 }
 
 #board .hide-older-posts {
