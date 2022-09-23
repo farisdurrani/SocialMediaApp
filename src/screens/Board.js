@@ -53,7 +53,7 @@ const Board = () => {
   }
 
   return (
-    <div id="board">
+    <div id="board" className="mb-5">
       <div>
         <h1>Board </h1>
         <Button variant="outline-light" onClick={handleLogOut}>
