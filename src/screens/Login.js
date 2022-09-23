@@ -16,7 +16,7 @@ const Login = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         console.log(`User ${user.email} is logged in`);
-        setCurrentUser(currentUser);
+        setCurrentUser(user);
         window.location.replace("/board");
       }
     });
